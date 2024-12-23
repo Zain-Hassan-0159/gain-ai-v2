@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIN-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="assets/flow.css" rel="stylesheet" />
+    <link href="assets/funnel.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        @media all and (min-width: 768px) {
+            .how-it-works-section {
+                margin-top: 300px;
+            }
+        }
+
+        .form-footer {
+            padding-top: 20px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #222;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body class="main_body">
+    <header>
+        <img src="assets/images/header-img.jpeg" alt="Header of the Page" width="" height="">
+    </header>
+    <section>
+        <h1>Einladung von Frank Thelen, um in den nächsten 30 Tagen mindestens 20.000 € zu verdienen:</h1>
+        <div class="video">
+            <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/ua7llff1ya.js" async type="module"></script><style>wistia-player[media-id='ua7llff1ya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ua7llff1ya/swatch'); display: block; filter: blur(5px); padding-top:125.0%; }</style> <wistia-player media-id="ua7llff1ya"></wistia-player>
+        </div>
+        <div class="reg_form">
+            <div class="custom-form">
+                <div class="custom-form-slide active">
+                    <p class="p1">Créer votre compte</p>
+                    <p class="p2">
+                        Pour compléter l'inscription, une vérification par téléphone
+                        est requise. Le numéro de téléphone sera utilisé pour
+                        vérifier le compte.
+                    </p>
+                </div>
+                <div class="gaff2" id="caff">
+                    <!-- f -->
+                </div>
+                <div class="gaff">
+                    <!-- f -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <p>2024, Gain-AI. Alle Rechte vorbehalten </p>
+    </footer>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .vld-overlay {
+            text-align: center;
+        }
+
+        .form-group,
+        .col-md-6.form-group {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: 10px;
+        }
+
+        #form > button {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            background-color: #007bff !important;
+            color: #fff !important;
+            min-height: 48px;
+            font-size: 20px;
+            opacity: 1;
+        }
+
+        form .row {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        label.control-label,
+        #gaff > form > div:nth-child(11) > div:nth-child(1) {
+            display: none;
+        }
+        .form-control {
+            border: 3px solid #6bfff7 !important;
+            padding: 0px !important;
+            margin-bottom: 0px;
+            text-indent: 10px;
+            width: 100%;
+            min-height: 40px;
+        }
+
+        #form > div:nth-child(12) > div:nth-child(1) {
+            margin-bottom: 0;
+        }
+
+        .checkbox {
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .checkbox a {
+            position: relative;
+            left: 5px;
+            top: -2px;
+            font-size: 13px;
+        }
+
+        .valid {
+            border: 1px solid green;
+            background-color: white !important;
+        }
+
+        .notvalid {
+            border: 1px solid red !important;
+        }
+
+        .notvalidphone {
+            background-color: rgb(253, 164, 164) !important;
+            border: 1px solid red !important;
+        }
+
+        .initial {
+            border: 1px solid gray !important;
+        }
+
+        @media (max-width: 1050px) {
+            .article__precontent,
+            .article__news {
+                display: block;
+            }
+        }
+    </style>
+    <script>
+        var formConf = { pass: false, btnTxt: "Register Now" };
+        function generatePassword() {
+            var length = 5,
+                charset =
+                    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                retVal = "";
+            for (var i = 0, n = charset.length; i < length; ++i) {
+                retVal += charset.charAt(Math.floor(Math.random() * n));
+            }
+            return retVal + "eG6";
+        }
+
+        document.addEventListener("build", function () {
+            if (formConf.btnTxt !== undefined) {
+                jQuery("button.btn.btn-danger.btn-lg.tradeBtn").text(
+                    formConf.btnTxt
+                );
+            }
+
+            jQuery("input.form-control.bfh-password")
+                .css({ display: "none" })
+                .attr("value", generatePassword());
+            jQuery(".bfh-phone").focus(function () {
+                jQuery(this).trigger("change");
+            });
+            jQuery(".bfh-phone").attr("autocomplete", "off");
+        });
+    </script>
+    <script>
+        gvars = {
+            gi: 86,
+            ci: 1,
+            wl: 17,
+            ap: 0,
+            ae: 0,
+            lg: "fr",
+            ai: 2958156
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
