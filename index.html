@@ -40,11 +40,9 @@
         <div class="reg_form">
             <div class="custom-form">
                 <div class="custom-form-slide active">
-                    <p class="p1">Créer votre compte</p>
+                    <p class="p1">Erstellen Sie Ihr Konto</p>
                     <p class="p2">
-                        Pour compléter l'inscription, une vérification par téléphone
-                        est requise. Le numéro de téléphone sera utilisé pour
-                        vérifier le compte.
+                        Um die Registrierung abzuschließen, ist eine telefonische Verifizierung erforderlich. Die Telefonnummer wird zur Überprüfung des Kontos verwendet.
                     </p>
                 </div>
                 <div class="gaff2" id="caff">
@@ -149,7 +147,7 @@
         }
     </style>
     <script>
-        var formConf = { pass: false, btnTxt: "Register Now" };
+        var formConf = { pass: false, btnTxt: "Jetzt registrieren" };
         function generatePassword() {
             var length = 5,
                 charset =
@@ -191,5 +189,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script>
     <script src="form.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Use a timeout to ensure the form has loaded if it loads dynamically
+            setTimeout(() => {
+                // Update the placeholder for the first name field
+                const firstNameField = document.querySelector('#firstName');
+                if (firstNameField) {
+                    firstNameField.placeholder = 'Vorname';
+                }
+
+                // Update the placeholder for the last name field
+                const lastNameField = document.querySelector('#lastName');
+                if (lastNameField) {
+                    lastNameField.placeholder = 'Nachname';
+                }
+
+                // Update the placeholder for the email field
+                const emailField = document.querySelector('#email');
+                if (emailField) {
+                    emailField.placeholder = 'E-Mail';
+                }
+            }, 100); // Adjust timeout as needed based on the form's loading delay
+        });
+
+    </script>
 </body>
 </html>
