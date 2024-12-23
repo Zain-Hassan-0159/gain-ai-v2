@@ -191,27 +191,38 @@
     <script src="form.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Use a timeout to ensure the form has loaded if it loads dynamically
-            setTimeout(() => {
-                // Update the placeholder for the first name field
+            const intervalTime = 100; // Interval time in milliseconds
+            const timeoutTime = 60000; // Timeout time in milliseconds (1 minute)
+            let elapsedTime = 0;
+
+            const intervalId = setInterval(() => {
+                // Select the fields
                 const firstNameField = document.querySelector('#firstName');
-                if (firstNameField) {
-                    firstNameField.placeholder = 'Vorname';
-                }
-
-                // Update the placeholder for the last name field
                 const lastNameField = document.querySelector('#lastName');
-                if (lastNameField) {
+                const emailField = document.querySelector('#email');
+
+                // Check if all fields are found
+                if (firstNameField && lastNameField && emailField) {
+                    // Update placeholders
+                    firstNameField.placeholder = 'Vorname';
                     lastNameField.placeholder = 'Nachname';
+                    emailField.placeholder = 'E-Mail';
+
+                    // Clear the interval since all fields are updated
+                    clearInterval(intervalId);
                 }
 
-                // Update the placeholder for the email field
-                const emailField = document.querySelector('#email');
-                if (emailField) {
-                    emailField.placeholder = 'E-Mail';
+                // Increment elapsed time
+                elapsedTime += intervalTime;
+
+                // Terminate if timeout is reached
+                if (elapsedTime >= timeoutTime) {
+                    console.warn('Fields not found within the timeout period.');
+                    clearInterval(intervalId);
                 }
-            }, 100); // Adjust timeout as needed based on the form's loading delay
+            }, intervalTime);
         });
+
 
     </script>
 </body>
